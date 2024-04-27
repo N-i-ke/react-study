@@ -7,8 +7,8 @@ export const ColorfulMessage = (props) => {
 
   return (
     <div>
-        <p style={contentStyle}>{props.message}</p>
-        <p style={contentStyle}>{children}</p>
+      <p style={contentStyle}>{props.message}</p>
+      <p style={contentStyle}>{children}</p>
     </div>
   );
 };
