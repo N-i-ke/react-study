@@ -12,7 +12,12 @@ export const App = () => {
     setNum((prev) => {
       const newNum = prev + 1;
 
-      if (newNum % 3 === 0) {
+      return newNum;
+    });
+  };
+    useEffect(() => {
+    if (num > 0) {
+      if (num % 3 === 0) {
         if (!isShowFace) {
           setIsShowFace(true); // 状態変更が必要なときのみ変更
         }
@@ -20,14 +25,10 @@ export const App = () => {
         if (isShowFace) {
           setIsShowFace(false); // 状態変更が必要なときのみ変更
         }
-      }
-
-      return newNum;
-    });
-  };
-    useEffect(() => {
-        console.log("=useeffect=")
-    });
+      }   
+    }
+    }, [num]);
+    //useEffectの第二引数は依存関係　値に変更があるときに更新されるようになっている
   
 
   const onClickToggle = () => {
